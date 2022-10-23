@@ -78,7 +78,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="╭╴\[\e[31m\]\u\[\e[m\] on \[\e[35m\]\h\[\e[m\] at \[\e[36m\]\w\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\]\n╰╴"
+export PS1="\n╭╴\[\e[31m\]\u\[\e[m\] on \[\e[35m\]\h\[\e[m\] at \[\e[36m\]\w\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\]\n╰╴"
 export PS2=""
 
 # Setup pyenv

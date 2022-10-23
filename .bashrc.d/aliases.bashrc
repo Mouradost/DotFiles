@@ -20,6 +20,9 @@ alias nv="nvim"
 # history
 alias hg="history | grep"
 
+# File search
+alias sf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+
 # Get ip wan
 alias ip-wan="curl ipinfo.io"
 
@@ -33,7 +36,13 @@ alias ktransfer="kitty +kitten transfer"
 alias top="bpytop"
 
 # ranger
-alias rg="ranger --cmd='set show_hidden!'"
+alias ranger="ranger --cmd='set show_hidden!'"
+
+# Neofetch
+alias nf="neofetch"
+
+# Cloud
+alias cloud="onedriver ~/OneDrive/"
 
 # expressvpn
 alias vpn="expressvpn"
