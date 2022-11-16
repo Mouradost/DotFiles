@@ -2,6 +2,10 @@
 
 All my configuration files 📂
 
-# Prompt
+## Prompt
 
 ![My Prompt](Prompt.png)
+
+## Starship Prompt
+
+![My Prompt](Starship_Prompt.png)

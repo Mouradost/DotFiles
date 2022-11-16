@@ -1,0 +1,32 @@
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 50
+
+# Disable the blank line at the start of the prompt
+add_newline = true 
+
+[username]
+style_user = "bold red "
+show_always = true
+format = "[$user]($style) "
+
+[hostname]
+ssh_only = true
+style = "bold purple"
+format = "on [$hostname $ssh_symbol]($style)"
+disabled = false
+
+[git_branch]
+style = "bold yellow"
+
+[localip]
+format = "[$localipv4]($style) "
+disabled = false
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+format = "in [$path]($style)[$read_only]($read_only_style) "
+
+[shell]
+disabled = false
+

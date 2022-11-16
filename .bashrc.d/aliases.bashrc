@@ -2,8 +2,17 @@
 alias install="sudo dnf install"
 alias update="sudo dnf upgrade && sudo dnf update"
 
-# ls
-alias ls="ls -a -l --hyperlink=auto --color=auto"
+# lsd
+alias ls="lsd -a -l --hyperlink=auto --color=auto"
+
+# bat
+alias cat="bat"
+batdiff() {
+    git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
+
+#fzf
+alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 # git
 alias gs="git status"
@@ -12,7 +21,7 @@ alias gaa="git add --all"
 alias gc="git commit"
 alias gl="git log --online"
 alias gb="git checkout -b"
-alias gd="git diff"
+alias gd="batdiff"
 
 # nvim
 alias nv="nvim"
