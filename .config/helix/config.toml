@@ -1,0 +1,31 @@
+theme = "tokyonight"
+
+[editor]
+line-number = "relative"
+mouse = true
+true-color = true
+color-modes = true
+
+[keys.normal]
+"backspace" = {f = ":fmt", r = ":sh cargo run", R = ":sh cargo run --release", t = ":sh cargo test", s = [":w", ":config-reload"], c = ":config-open"}
+
+[keys.insert]
+"C-space" = "completion"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "diagnostics"]
+center = []
+right = ["selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.indent-guides]
+render = true
+character = "╎"
