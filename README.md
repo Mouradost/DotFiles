@@ -4,12 +4,12 @@ All my configuration files 📂
 
 ## Prompt
 
-![My Prompt](Prompt.png)
+![My Prompt](./docs/Prompt.png)
 
 ## Starship Prompt
 
-![My Prompt](Starship_Prompt.png)
+![My Prompt](./docs/Starship_Prompt.png)
 
 ## Overall look
 
-![My Desktop](Desktop.png)
+![My Desktop](./docs/Desktop.png)
