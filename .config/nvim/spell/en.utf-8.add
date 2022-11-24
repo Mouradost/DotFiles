@@ -20,3 +20,8 @@ GRU
 DCRNN
 GraphSAGE
 GCNs
+GCN
+GAT
+STGA
+Eq
+Pytorch

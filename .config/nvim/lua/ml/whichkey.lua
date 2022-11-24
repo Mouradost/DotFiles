@@ -148,8 +148,8 @@ local mappings = {
 			"<cmd>lua vim.diagnostic.goto_prev()<cr>",
 			"Prev Diagnostic",
 		},
-		-- l = { "<cmd>lua vim.lsp.codelens.refresh()<cr> <cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		l = { "<cmd>lua vim.lsp.codelens.refresh()<cr> <cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		R = { "<cmd>lua vim.lsp.codelens.refresh()<cr>", "CodeLens Refresh" },
 		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -210,7 +210,7 @@ local mappings = {
 	r = {
 		name = "Run file",
 		p = { "<cmd>:w | TermExec cmd='python %'<cr>", "Python" },
-		r = { "<cmd>:w | TermExec cmd='cargo run %'<cr>", "Rust" },
+		r = { "<cmd>:w | TermExec cmd='cargo run --quiet'<cr>", "Rust" },
 		l = { "<cmd>TermExec cmd='latexmk -pdf -pvc % | zathura -'<cr>", "Latex live view" },
 	},
 }

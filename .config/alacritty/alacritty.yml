@@ -75,7 +75,8 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
   size: 16.0
-# Colors (Tomorrow Night)
+
+# Choosing a theme
 colors: *tokyo-night
 
 cursor:

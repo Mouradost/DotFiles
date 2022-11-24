@@ -173,3 +173,19 @@ cmp.setup.filetype("tex", {
 		{ name = "buffer" },
 	}),
 })
+
+-- Lazy loading completions for crates in rust
+vim.api.nvim_create_autocmd("BufRead", {
+	group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
+	pattern = "Cargo.toml",
+	callback = function()
+		cmp.setup.buffer({
+			sources = {
+				{ name = "crates" },
+				{ name = "nvim_lsp" },
+				{ name = "path" },
+				{ name = "buffer", keyword_length = 4 },
+			},
+		})
+	end,
+})

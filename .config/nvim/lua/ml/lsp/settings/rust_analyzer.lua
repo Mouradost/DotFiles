@@ -1,8 +1,1 @@
-return {
-	inlayHints = {
-		bindingModeHints = { enable = true },
-		closureReturnTypeHints = { enable = "always" },
-		lifetimeElisionHints = { enable = "always" },
-	},
-	hover = { actions = { references = { enable = true } } },
-}
+return {} -- All configs are set in rust-tools.lua since it overwrite it anyway

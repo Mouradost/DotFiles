@@ -128,6 +128,14 @@ return packer.startup(function(use)
 
 	-- Rust
 	use({ "git@github.com:simrat39/rust-tools.nvim.git" })
+	use({
+		"git@github.com:Saecki/crates.nvim.git",
+		event = { "BufRead Cargo.toml" },
+		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("crates").setup()
+		end,
+	})
 
 	-- Color highlight
 	use({ "git@github.com:norcalli/nvim-colorizer.lua.git" }) -- fast color highlight (show the color like this #FFFFFF)

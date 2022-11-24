@@ -27,7 +27,6 @@ require("ml.project")
 require("ml.indentline")
 
 require("ml.rust-tools")
-
 -- require("ml.tabnine")
 require("ml.nvim-dap")
 
