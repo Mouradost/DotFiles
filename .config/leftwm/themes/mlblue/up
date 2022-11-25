@@ -1,31 +1,34 @@
-#!/usr/bin/env bash
+#!/bin/bash
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-
+echo "Down last"
 #down the last running theme
 if [ -f "/tmp/leftwm-theme-down" ]; then
     /tmp/leftwm-theme-down
     rm /tmp/leftwm-theme-down
 fi
-ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
+ln -s ${SCRIPTPATH}/down /tmp/leftwm-theme-down
 
 
-#boot picom or compton if it exists
+echo "Strat picom"
+#boot picom if it exists
 if [ -x "$(command -v picom -b)" ]; then
   picom &> /dev/null &
-elif [ -x "$(command -v compton)" ]; then
-  compton &> /dev/null &
 fi
 
-#set the theme.ron config
+echo "Load theme $SCRIPTPATH"
+# set the theme.ron config
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
-#set background
+echo "Set background"
+# set the background
 if [ -x "$(command -v feh)" ]; then
-  # feh --bg-scale $SCRIPTPATH/background.jpg
-  feh --bg-scale ~/Pictures/Wallpaper/03.jpg
+  feh --bg-scale "${SCRIPTPATH}/background.jpg"
 fi
 
+
+echo "Boot polybar"
+#boot a polybar for each monitor
 
 index=0
 monitors="$(polybar -m | sed s/:.*//)"
@@ -33,8 +36,9 @@ leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read 
 do
   let indextemp=index+1
   monitor=$(sed "$indextemp!d" <<<"$monitors")
-  barname="mainbar$index"
-  monitor=$monitor offset=$x width=$width polybar -c $SCRIPTPATH/polybar.config $barname &> /dev/null &
+  monitor=$monitor offset=$x width=$width polybar -c $SCRIPTPATH/polybar/config.ini &> /dev/null &
   let index=indextemp
 done
+
+echo "done"
 
