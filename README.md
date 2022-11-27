@@ -12,4 +12,10 @@ All my configuration files 📂
 
 ## Overall look
 
-![My Desktop](./docs/Desktop.png)
+### Basic_polybar theme
+
+![Basic Polybar](./docs/Desktop.png)
+
+### Mlblue theme
+
+![ML-Blue](./docs/Desktop_emoji.png)
