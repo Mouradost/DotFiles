@@ -3,7 +3,7 @@
 PACKAGES=('curl' 'git' 'grep' 'ranger' 'pandoc' 'alacritty' 'neovim' 'neofetch')
 PACKAGES_WRITING=('zathura' 'zathura-cb' 'zathura-djvu' 'zathura-pdf-poppler' 'zathura-ps' 'texlive')
 PACKAGES_WM=('leftwm' 'polybar' 'picon' 'rofi' 'feh')
-PACKAGES_DEV=('make' 'g++' 'cmake' 'libsqlite' 'hdf5-libdev')
+PACKAGES_DEV=('make' 'g++' 'cmake' 'libsqlite' 'hdf5-libdev' 'mingw64-gcc' 'mingw32-gcc')
 PACKAGES_EXTRA=('lsd' 'bat' 'bpytop')
 
 RESTORE=$(echo -en '\033[0m')
@@ -50,6 +50,14 @@ user_pref() {
   
   echo "Packages useful for writing are$LCYAN ${PACKAGES_WRITING[*]} $RESTORE"
   read -rp "Install? (y/N): " 'choices[writing_packages]' 
+
+  echo "Specify a version of python that you want to install (leave it empty to not install python)"
+  read -rp "Install Python Version? : " 'choices[python_version]' 
+
+  echo "Install the following python packages$LCYAN"
+  cmd < requirement.txt
+  read -rp "$RESTORE Install essential packages for python? (y/N): " 'choices[python_packages]' 
+
 }
 
 install_prompt() {
@@ -61,6 +69,16 @@ install_python() {
   echo "$YELLOW----------------------------Installing$LYELLOW Python----------------------------$RESTORE"
   git clone https://github.com/pyenv/pyenv.git ~/.pyenv
   cd ~/.pyenv && src/configure && make -C src
+
+  if [[ ${choices[python_version]} != [nN] || ${choices[python_version]} != [nN][oO] || -n ${choices[python_version]} ]]; then
+    "cd $HOME/GitHub/DotFiles || return"
+    pyenv install -r requirements.txt
+  fi
+
+  if [[ ${choices[python_packages]} == [yY] || ${choices[python_packages]} == [yY][eE][sS] ]]; then
+    pip install -r "${choices[python_packages]}"
+  fi
+
 }
 
 install_rust() {

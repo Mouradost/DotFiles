@@ -1,0 +1,12 @@
+cython
+git+https://github.com/PyTables/PyTables.git@v3.6.1
+tqdm
+numpy
+pandas
+matplotlib
+torch
+torchvision
+torchmetrics
+tensorboard
+seaborn
+PySide6
