@@ -10,3 +10,6 @@ torchmetrics
 tensorboard
 seaborn
 PySide6
+pylint
+black
+pynvim
