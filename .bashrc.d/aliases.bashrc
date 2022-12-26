@@ -1,6 +1,6 @@
 # dnf
 alias install="sudo dnf install"
-alias update="sudo dnf upgrade && sudo dnf update"
+alias update="sudo dnf update && sudo dnf upgrade"
 
 # lsd
 alias ls="lsd -a -l --hyperlink=auto --color=auto"
