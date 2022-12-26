@@ -1,6 +1,6 @@
 # Multiple colors schemes
 schemes:
-  tokyo-night: &tokyo-night # Default colors
+  tokyo-night: &tokyo-night
     primary:
       background: '0x1a1b26'
       foreground: '0xa9b1d6'
@@ -25,7 +25,7 @@ schemes:
       cyan: '0x0db9d7'
       white: '0xacb0d0'
 
-  tokyo-night-storm: &tokyo-night-storm # Default colors
+  tokyo-night-storm: &tokyo-night-storm
     primary:
       background: '0x24283b'
       foreground: '0xa9b1d6'
@@ -50,11 +50,21 @@ schemes:
       cyan: '0x0db9d7'
       white: '0xacb0d0'
 
+# Colors (Tomorrow Night)
+colors: *tokyo-night
+
 # Config
 env:
   decorations: none
   opacity: '0.95'
   decorations_theme_variant: dark
+  # TERM: xterm-256color
+  TERM: alacritty
+
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
 
 window:
   padding:
@@ -64,38 +74,28 @@ window:
 font:
   normal:
     family: JetBrainsMono Nerd Font
+    # family: monospace
     style: Regular
   bold:
     family: JetBrainsMono Nerd Font
+    # family: monospace
     style: Bold
   italic:
     family: JetBrainsMono Nerd Font
+    # family: monospace
     style: Italic
   bold_italic:
     family: JetBrainsMono Nerd Font
+    # family: monospace
     style: Bold Italic
-  size: 16.0
-
-# Choosing a theme
-colors: *tokyo-night
+  size: 14.0
 
 cursor:
   style:
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
     shape: Block
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
     blinking: Off
-  # Cursor blinking interval in milliseconds.
-  #blink_interval: 750
-  #blink_timeout: 5
-  #unfocused_hollow: true
-  #thickness: 0.15
 
 live_config_reload: true
+
+key_bindings:
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
