@@ -2,7 +2,7 @@
 
 PACKAGES=('curl' 'git' 'grep' 'ranger' 'pandoc' 'alacritty' 'neovim' 'neofetch')
 PACKAGES_WRITING=('zathura' 'zathura-cb' 'zathura-djvu' 'zathura-pdf-poppler' 'zathura-ps' 'texlive')
-PACKAGES_WM=('leftwm' 'polybar' 'picon' 'rofi' 'feh')
+PACKAGES_WM=('leftwm' 'polybar' 'picom' 'rofi' 'feh')
 PACKAGES_DEV=('make' 'g++' 'cmake' 'libsqlite' 'hdf5-libdev' 'mingw64-gcc' 'mingw32-gcc')
 PACKAGES_EXTRA=('lsd' 'bat' 'bpytop')
 
