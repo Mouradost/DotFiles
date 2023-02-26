@@ -2,30 +2,34 @@ theme = "tokyonight"
 
 [editor]
 line-number = "relative"
-mouse = true
+auto-format = true
+auto-completion = true
+auto-save = true
 true-color = true
+# buffer-line = "multiple"
 color-modes = true
+mouse = true
 
-[keys.normal]
-"backspace" = {f = ":fmt", r = ":sh cargo run", R = ":sh cargo run --release", t = ":sh cargo test", s = [":w", ":config-reload"], c = ":config-open"}
-
-[keys.insert]
-"C-space" = "completion"
+[editor.statusline]
+left = ["mode", "spinner", "diagnostics", "file-encoding", "separator", "file-line-ending", "separator", "file-type", "separator", "file-name"]
+center = []
+right = [ "selections", "separator" , "position", "position-percentage", "separator", "total-line-numbers"]
+separator = "|"
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
-[editor.file-picker]
-hidden = false
-
-[editor.statusline]
-left = ["mode", "spinner", "file-name", "diagnostics"]
-center = []
-right = ["selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
-separator = "│"
-
 [editor.indent-guides]
 render = true
 character = "╎"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+"backspace" = {f = ":fmt", r = ":sh cargo run", R = ":sh cargo run --release", t = ":sh cargo test", s = ":w", o = ":config-open", r = ":config-reload"}
+
+[keys.insert]
+"C-space" = "completion"
