@@ -11,4 +11,6 @@ leftwm-command "UnloadTheme"
 
 pkill picom
 pkill polybar
+pkill flameshot
+
 kill $(ps aux | grep "layout.sh" | grep -v grep | awk '{print $2}')

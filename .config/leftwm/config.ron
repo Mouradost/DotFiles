@@ -29,19 +29,19 @@
     max_window_width: None,
     layouts: [
         MainAndVertStack,
-        MainAndHorizontalStack,
-        MainAndDeck,
-        GridHorizontal,
-        EvenHorizontal,
-        EvenVertical,
-        Fibonacci,
-        LeftMain,
-        CenterMain,
-        CenterMainBalanced,
-        CenterMainFluid,
-        Monocle,
-        RightWiderLeftStack,
         LeftWiderRightStack,
+        MainAndHorizontalStack,
+        CenterMainBalanced,
+        GridHorizontal,
+        /* MainAndDeck, */
+        /* EvenHorizontal, */
+        /* EvenVertical, */
+        /* Fibonacci, */
+        /* LeftMain, */
+        /* CenterMain, */
+        /* CenterMainFluid, */
+        /* Monocle, */
+        /* RightWiderLeftStack, */
     ],
     layout_mode: Workspace,
     insert_behavior: Bottom,
@@ -50,15 +50,15 @@
     ],
     window_rules: [
       ( window_class: "Navigator", spawn_on_tag: 1 ),
-      ( window_class: "Mailspring", spawn_on_tag: 7 ),
+      ( window_class: "Mailspring", spawn_on_tag: 8 ),
       ( window_title: "Qv2ray", spawn_on_tag: 9 ),
       ( window_class: "Zotero", spawn_on_tag: 3 ),
-      ( window_class: "frog", spawn_on_tag: 1, spawn_floating: true ),
+      ( window_class: "frog", spawn_floating: true ),
       ( window_class: "krita", spawn_on_tag: 5 ),
-      ( window_class: "Blender", spawn_on_tag: 4 ),
+      ( window_class: "Blender", spawn_on_tag: 5 ),
       ( window_class: "Inkscape", spawn_on_tag: 5 ),
       ( window_class: "resolve", spawn_on_tag: 6 ),
-      ( window_class: "libreoffice", spawn_on_tag: 8 ),
+      ( window_class: "libreoffice", spawn_on_tag: 4 ),
       ( window_class: "easyeffects", spawn_on_tag: 6 ),
       ( window_class: "gnome-calculator", spawn_floating: true ),
 
